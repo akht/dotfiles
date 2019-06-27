@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTPATH=~/workspace/github.com/akht/dotfiles
+DOTPATH=$(ghq root)/github.com/akht/dotfiles
 
 for f in .??*
 do

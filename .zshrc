@@ -221,8 +221,6 @@ alias gitlog='git log | more'
 
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
-alias pe='pt "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less -N ''
-
 alias setting='cat $HOME/.zshrc | peco'
 
 # -------------------------------------
@@ -297,3 +295,8 @@ function ptc () {
   code $(pt $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
 }
 zle -N ptc
+
+function pe() {
+  pt "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less -N '
+}
+zle -N pe

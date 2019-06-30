@@ -192,9 +192,7 @@ zstyle ':vcs_info:bzr:*' use-simple true
 alias grep="egrep -s -I --exclude='*.tar.gz' --exclude='*.svn-*' --exclude='entries' --exclude='*/cache/*'"
 
 # ls
-alias ls="ls -G" # color for darwin
-alias l1="ls -1"
-alias ll='ls -l'
+alias l="exa -lha"
 alias Grep="grep"
 
 #more

@@ -1,5 +1,8 @@
 eval "$(anyenv init -)"
 
+# パスを追加したい場合
+export PATH="$HOME/bin:$PATH"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -103,6 +106,25 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# -------------------------------------
+# パス
+# -------------------------------------
+
+# 重複する要素を自動的に削除
+typeset -U path cdpath fpath manpath
+
+path=(
+    $HOME/bin(N-/)
+    /usr/local/bin(N-/)
+    /usr/local/sbin(N-/)
+    $path
+)
+
+# -------------------------------------
+# エイリアス
+# -------------------------------------
+
+alias brew="env PATH=${PATH/\/Users\/monasyu\/\.anyenv\/envs\/phpenv\/shims:/} brew"
 
 # -------------------------------------
 # キーバインド

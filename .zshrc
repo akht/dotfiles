@@ -222,6 +222,8 @@ alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
 alias setting='cat $HOME/.zshrc | peco'
 
+alias noti='terminal-notifier -message "コマンド完了"'
+
 # -------------------------------------
 # キーバインド
 # -------------------------------------

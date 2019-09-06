@@ -203,6 +203,7 @@ alias tree="tree -NC" # N: 文字化け対策, C:色をつける
 
 alias history="history -1000"
 alias be="bundle exec"
+alias dcrr="docker-compose run --rm"
 setopt share_history
 
 
@@ -298,3 +299,5 @@ function pe() {
   pt "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less -N '
 }
 zle -N pe
+export PATH="/usr/local/opt/bison@2.7/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"

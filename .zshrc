@@ -303,3 +303,4 @@ function pe() {
 zle -N pe
 export PATH="/usr/local/opt/bison@2.7/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
+eval "$(starship init zsh)"

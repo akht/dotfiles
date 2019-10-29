@@ -301,6 +301,13 @@ function pe() {
   pt "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less -N '
 }
 zle -N pe
+
+# find - peco
+function fp () {
+  code $(find . $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
+zle -N fp
+
 export PATH="/usr/local/opt/bison@2.7/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 eval "$(starship init zsh)"

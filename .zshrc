@@ -231,8 +231,8 @@ alias noti='terminal-notifier -message "コマンド完了"'
 bindkey "^R" history-incremental-search-backward
 
 if [ `which peco >/dev/null 2>&1 ; echo $?` -eq 0 ]; then
-  bindkey '^te' peco-docker-login
-  bindkey '^tl' peco-docker-log
+  bindkey '^D^E' peco-docker-login
+  bindkey '^D^G' peco-docker-log
   bindkey '^g' peco-src
   bindkey '^r' peco-select-history
 fi

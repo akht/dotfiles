@@ -203,6 +203,7 @@ alias tree="tree -NC" # N: 文字化け対策, C:色をつける
 
 alias history="history -1000"
 alias be="bundle exec"
+alias d="docker"
 alias deit="docker exec -it"
 alias dcrr="docker-compose run --rm"
 setopt share_history

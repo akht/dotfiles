@@ -289,18 +289,18 @@ zle -N peco-select-history
 
 # ptの検索結果をpecoで選択してvimで開く
 function ptv () {
-  vim $(pt "$@" | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " " $1}')
+  vim $(pt -i "$@" | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " " $1}')
 }
 zle -N ptv
 
 # ptの検索結果をpecoで選択してVSCodeで開く
 function ptc () {
-  code $(pt $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+  code $(pt -i $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
 }
 zle -N ptc
 
 function pe() {
-  pt "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less -N '
+  pt -i "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less -N '
 }
 zle -N pe
 
@@ -309,6 +309,16 @@ function fp () {
   code $(find . $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
 }
 zle -N fp
+
+# rgの検索結果をpecoで選択してvimで開く
+function rgv(){
+    vim `rg -i $1 | peco | cut -d : -f 1`
+}
+
+# rgの検索結果をpecoで選択してVSCodeで開く
+function rgc(){
+    code `rg -i $1 | peco | cut -d : -f 1`
+}
 
 export PATH="/usr/local/opt/bison@2.7/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"

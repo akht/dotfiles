@@ -205,6 +205,8 @@ alias history="history -1000"
 alias be="bundle exec"
 alias d="docker"
 alias deit="docker exec -it"
+alias dcr="docker-compose run"
+alias dcrw="docker-compose run web"
 alias dcrr="docker-compose run --rm"
 setopt share_history
 
@@ -322,4 +324,5 @@ function rgc(){
 
 export PATH="/usr/local/opt/bison@2.7/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="$PATH:$HOME/workspace/flutter/bin"
 eval "$(starship init zsh)"

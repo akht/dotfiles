@@ -221,6 +221,7 @@ alias glint='golint ./... | grep -v vendor'
 alias gs='git status'
 alias gl='git log --graph'
 alias gitlog='git log | more'
+alias gcm='git commit -m'
 
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
